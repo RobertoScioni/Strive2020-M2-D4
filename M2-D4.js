@@ -3,6 +3,10 @@ let assigned = []
 const assign = () => {
 	let teams = document.querySelector("#teams").value
 	let names = document.querySelector("#listImport").value.split("\n")
+	if (names.length === 0) {
+		console.log("no more students")
+		return
+	}
 	//console.log(teams, " teams")
 	//console.log(" Students")
 	//console.log(names)
