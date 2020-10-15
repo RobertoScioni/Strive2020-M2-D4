@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<!--
+    WELCOME TO THE STRIVE TEAM GENERATOR!
+    The app is pretty straight forward, use Bootstrap to add the following features:
+    - The user can add a list of names
+    - The user can set the number of teams
+    - Every time the user clicks on the "assign" button, a random name is placed in a team and removed from the list
+    - Each team should be inside a "column"
+    - [EXTRA] Create a button to remove an user from a team, putting him back in the main list
+    - [EXTRA] Create a button to reset the state of the app
+    -->
+		<!-- Required meta tags -->
+		<meta charset="utf-8" />
+		<meta
+			name="viewport"
+			content="width=device-width, initial-scale=1, shrink-to-fit=no"
+		/>
+
+		<!-- Bootstrap CSS -->
+		<link
+			rel="stylesheet"
+			href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css"
+			integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2"
+			crossorigin="anonymous"
+		/>
+		<link rel="stylesheet" href="style.css" />
+
+		<!--jQuery and Bootstrap Bundle (includes Popper) -->
+		<script
+			src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+			integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+			crossorigin="anonymous"
+		></script>
+		<script
+			src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js"
+			integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx"
+			crossorigin="anonymous"
+		></script>
+		<!--my scripts-->
+		<script src="M2-D4.js"></script>
+
+		<title>Hello, world!</title>
+	</head>
+	<body>
+		<h1>Striver's Battle Royale Team Sorter</h1>
+		<div class="form-group row">
+			<div class="col-sm-5">
+				<label for="listImport" class="form-label">Students</label>
+				<textarea id="listImport" class="form-control Students"></textarea>
+			</div>
+			<div class="col-sm-1">
+				<br />
+				<label for="teams" class="form-label">teams</label>
+				<input id="teams" type="number" min="0" max="999" />
+				<button class="btn-primary" onclick="assign()">Assign</button>
+			</div>
+		</div>
+		<div class="container">
+			<div id="roster" class="row"></div>
+		</div>
+	</body>
+</html>

@@ -1,0 +1,14 @@
+.testerClass {
+	border: solid;
+	height: 100px;
+}
+
+.Students {
+	min-height: 30em;
+	max-height: 30em;
+}
+
+#teams {
+	box-sizing: content-box;
+	width: 5ch;
+}
