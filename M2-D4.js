@@ -21,7 +21,9 @@ const assign = () => {
 		document.querySelector("#teams").readOnly = true
 		for (let i = 0; i < teams; i++) {
 			let team = document.createElement("div")
-			team.classList.add("col", "col-6", "col-md-2")
+			let bg = i % 2 === 0 ? "bg-dark" : "bg-light"
+			let tx = i % 2 === 0 ? "text-light" : "text-dark"
+			team.classList.add("col", "col-6", "col-md-2", bg, tx)
 			roster.appendChild(team)
 			let label = document.createElement("span")
 			label.innerText = "Group-" + i
