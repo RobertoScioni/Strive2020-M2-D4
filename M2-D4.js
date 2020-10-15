@@ -2,11 +2,11 @@ let assigned = []
 
 const assign = () => {
 	let teams = document.querySelector("#teams").value
-	let names = document.querySelector("#listImport").value.split("\n")
-	if (names.length === 0) {
+	if (document.querySelector("#listImport").value === "") {
 		console.log("no more students")
 		return
 	}
+	let names = document.querySelector("#listImport").value.split("\n")
 	//console.log(teams, " teams")
 	//console.log(" Students")
 	//console.log(names)
@@ -21,12 +21,15 @@ const assign = () => {
 		document.querySelector("#teams").readOnly = true
 		for (let i = 0; i < teams; i++) {
 			let team = document.createElement("div")
-			team.classList.add("col", "col-sm-2", "testerClass")
+			team.classList.add("col", "col-6", "col-md-2")
 			roster.appendChild(team)
+			let label = document.createElement("span")
+			label.innerText = "Group-" + i
 
 			let list = document.createElement("ul")
 			list.id = "t" + i
 			list.classList.add("list-group")
+			team.appendChild(label)
 			team.appendChild(list)
 		}
 	}
@@ -46,20 +49,24 @@ const resetStudent = (E) => {
 	let names = document.querySelector("#listImport").value
 	console.log(names)
 	names =
-		names !== "" || names !== null
+		document.querySelector("#listImport").value !== ""
 			? names.concat("\n" + student.innerText)
 			: student.innerText
 	//names = names.concat("\n" + student.innerText)
 	document.querySelector("#listImport").value = names
+	assigned.splice(assigned.indexOf(student.innertext), 1)
 	student.remove()
 }
 
 const reset = () => {
 	document.querySelector("#teams").readOnly = false
 	document.querySelector("#teams").value = "1"
-	let names = document
-		.querySelector("#listImport")
-		.value.concat(assigned.join("\n"))
+	let names =
+		document.querySelector("#listImport").value === ""
+			? document.querySelector("#listImport").value.concat(assigned.join("\n"))
+			: document
+					.querySelector("#listImport")
+					.value.concat("\n", assigned.join("\n"))
 
 	document.querySelector("#listImport").value = names
 	document.querySelector("#roster").innerHTML = ""
